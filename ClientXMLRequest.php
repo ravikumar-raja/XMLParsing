@@ -2,7 +2,7 @@
 /**
  * Implement the ClientXMLRequest
  *
- * @author     Ravi <r.ravimailid@gmail.com>
+ * @author  Ravi <r.ravimailid@gmail.com>
  */
 
 class ClientXMLRequest
@@ -14,8 +14,8 @@ class ClientXMLRequest
 	private $requestXML = null;
 
 	public function __construct(RequestXML $requestXML) {
-        $this->requestXML = $requestXML;
-    }
+        	$this->requestXML = $requestXML;
+   	}
 
 	/**
 	 * Function used by Client to send XML over HTTP POST
@@ -65,7 +65,6 @@ $pingXML = file_get_contents(__DIR__. '\\request\ping_request.xml');
 $pingRequestXML = new RequestXML($pingXML);
 $pingRequest = new ClientXMLRequest($pingRequestXML);
 echo $pingRequest->sendXMLOverPost();
-
 
 //Reverse Request
 $reverseXML = file_get_contents(__DIR__. '\\request\reverse_request.xml');
