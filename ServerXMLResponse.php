@@ -30,7 +30,7 @@ class ServerXMLResponse implements XMLResponse {
 	 * @return XML as string 
 	 */
 	public function xmlUpdate($resArr) : string
-    {	
+    	{	
 		$dom    	= new DOMDocument('1.0', 'utf-8'); 
 		$root   	= $dom->createElement($resArr['type']);      
 		$header 	= $dom->createElement('header');
