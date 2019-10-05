@@ -4,7 +4,7 @@ use DOMValidator;
 
 /**
  * Handle XML request & build XML response
- * @author     Ravi <r.ravimailid@gmail.com>
+ * @author  Ravi <r.ravimailid@gmail.com>
  */
 interface XML {
 
@@ -25,7 +25,6 @@ interface XMLResponse extends XML {
 
 class ServerXMLResponse implements XMLResponse {	
 	
-
 	/**
 	 * Convert response arrays for different requests into XML
 	 * @return XML as string 
@@ -155,7 +154,6 @@ $validated = $validator->validateFeeds($postData);
 
 //Initialise the ServerXMLResponse class and get the response
 $xmlResponse = new ServerXMLResponse;
-
 
 /* Response to the client on the basis of request type */
 
