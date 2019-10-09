@@ -5,17 +5,19 @@
  * @author  Ravi <r.ravimailid@gmail.com>
  */
 
+namespace XMLRequest;
+
 class ClientXMLRequest
 {
 
 	//Set Server API URL
-	private  $url = 'http://localhost/Voiceworks/XMLParsing/ServerXMLResponse.php';
+	private $url = 'http://localhost/Voiceworks/XMLParsing/ServerXMLResponse.php';
 
 	private $requestXML = null;
 
-	public function __construct(RequestXML $requestXML) {
+	public function __construct($requestXML) {
         	$this->requestXML = $requestXML;
-   	}
+    	}
 
 	/**
 	 * Function used by Client to send XML over HTTP POST
@@ -60,14 +62,12 @@ class ClientXMLRequest
 
 }
 
-// Ping Request
+//Ping Request
 $pingXML = file_get_contents(__DIR__. '\\request\ping_request.xml');
-$pingRequestXML = new RequestXML($pingXML);
-$pingRequest = new ClientXMLRequest($pingRequestXML);
+$pingRequest = new ClientXMLRequest($pingXML);
 echo $pingRequest->sendXMLOverPost();
 
 //Reverse Request
 $reverseXML = file_get_contents(__DIR__. '\\request\reverse_request.xml');
-$requestRequestXML = new RequestXML($reverseXML);
-$reverseRequest = new ClientXMLRequest($requestRequestXML);
+$reverseRequest = new ClientXMLRequest($reverseXML);
 echo $reverseRequest->sendXMLOverPost();
