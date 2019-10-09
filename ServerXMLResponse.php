@@ -1,6 +1,6 @@
 <?php
 
-use DOMValidator; 
+require_once('DOMValidator.php');
 
 /**
  * Handle XML request & build XML response
@@ -138,7 +138,7 @@ class ServerXMLResponse implements XMLResponse {
 
 
 //Pull the XML request in the string format
-$postData = file_get_contents('php://input');
+$postData = file_get_contents('php://input'); 
 
 // Interprets a string of XML into an object
 $xml = simplexml_load_string(trim($postData));
